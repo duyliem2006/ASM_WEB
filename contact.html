@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ &amp; Hệ thống cửa hàng - LIM.vn | Thời trang nam chính hãng</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/structure.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         1. HEADER / NAVBAR (DESKTOP HÀNG NGANG - MOBILE CỘT DỌC ẨN/HIỆN)
+         ========================================================================= -->
+    <header id="header_container">
+        <div class="header_inner">
+
+            <!-- Checkbox ẩn điều khiển đóng/mở Menu trên Mobile -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- Nút bấm 3 gạch Hamburger icon (Chỉ hiện khi thu nhỏ < 900px) -->
+            <label for="menu-toggle" class="menu-button" title="Mở / Đóng Menu">
+                <span class="open-icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </label>
+
+            <!-- Lớp phủ mờ nền khi menu mobile mở ra -->
+            <label for="menu-toggle" class="menu_backdrop"></label>
+
+            <!-- Logo LIM.vn -->
+            <a href="index.html" class="logo">LIM<span>.vn</span></a>
+
+            <!-- Menu điều hướng chính -->
+            <nav class="nav_menu">
+                <div class="nav_mobile_header">
+                    <span>Danh mục sản phẩm LIM.vn</span>
+                    <label for="menu-toggle" class="mobile_close_btn">&times;</label>
+                </div>
+
+                <a href="index.html">Trang chủ</a>
+                <a href="index.html#banchay">Bán chạy</a>
+                <a href="index.html#polo">Áo Polo</a>
+                <a href="index.html#somi">Áo sơ mi</a>
+                <a href="index.html#khoac">Áo khoác</a>
+                <a href="index.html#quan">Quần Jeans</a>
+                <a href="index.html#bangsize">Bảng size</a>
+                <a href="index.html#dichvu">Dịch vụ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="contact.html" class="active">Liên hệ</a>
+            </nav>
+
+            <!-- Tiện ích bên phải Header -->
+            <div class="header_utils">
+                <form action="index.html" method="get" class="header_search_form">
+                    <input type="text" name="q" placeholder="Tìm sản phẩm...">
+                    <button type="submit" class="search_icon_btn" title="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <a href="login.html" class="util_icon_link" title="Đăng nhập tài khoản"><i class="fa-regular fa-user"></i></a>
+                <a href="product_detail.html" class="util_icon_link" title="Giỏ hàng">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart_badge">3</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         2. BỐ CỤC CHÍNH WEBSITE
+         ========================================================================= -->
+    <div id="container">
+        <main id="main">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <span>/</span>
+                <strong>Hệ thống cửa hàng &amp; Liên hệ</strong>
+            </div>
+
+            <!-- Banner tiêu đề -->
+            <div class="section_title">
+                <span>Hệ thống trụ sở &amp; Chi nhánh LIM toàn quốc</span>
+            </div>
+
+            <!-- 4 Chi nhánh đại diện (Grid layout Y3) -->
+            <section class="features_section" style="margin-bottom: 35px;">
+                <div class="feature_box">
+                    <div class="feature_icon"><i class="fa-solid fa-location-dot" style="color: var(--limOrange);"></i></div>
+                    <div class="feature_text">
+                        <h4>Trụ sở &amp; Flagship TP.HCM</h4>
+                        <p>766 Võ Văn Kiệt, Phường 1, Quận 5, TP.HCM</p>
+                        <p style="font-size: 11px; color: #888888; margin-top: 4px;">Hotline: 028 7307 1441</p>
+                    </div>
+                </div>
+                <div class="feature_box">
+                    <div class="feature_icon"><i class="fa-solid fa-building" style="color: var(--limOrange);"></i></div>
+                    <div class="feature_text">
+                        <h4>Chi nhánh Hà Nội</h4>
+                        <p>120 Cầu Giấy, Q. Cầu Giấy, Hà Nội</p>
+                        <p style="font-size: 11px; color: #888888; margin-top: 4px;">Hotline: 024 7300 2442</p>
+                    </div>
+                </div>
+                <div class="feature_box">
+                    <div class="feature_icon"><i class="fa-solid fa-shop" style="color: var(--limOrange);"></i></div>
+                    <div class="feature_text">
+                        <h4>Chi nhánh Đà Nẵng</h4>
+                        <p>34 Lê Duẩn, Q. Hải Châu, TP. Đà Nẵng</p>
+                        <p style="font-size: 11px; color: #888888; margin-top: 4px;">Hotline: 023 6730 3553</p>
+                    </div>
+                </div>
+                <div class="feature_box">
+                    <div class="feature_icon"><i class="fa-solid fa-store" style="color: var(--limOrange);"></i></div>
+                    <div class="feature_text">
+                        <h4>Chi nhánh Cần Thơ</h4>
+                        <p>45 Đường 30/4, Q. Ninh Kiều, Cần Thơ</p>
+                        <p style="font-size: 11px; color: #888888; margin-top: 4px;">Hotline: 029 2730 4664</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bảng giờ mở cửa & hỗ trợ (Table theo tiêu chuẩn Y1) -->
+            <div class="section_title">
+                <span>Lịch làm việc &amp; Tiếp nhận bảo hành cửa hàng</span>
+            </div>
+            <div style="background-color: #ffffff; padding: 25px; border-radius: 12px; border: 1px solid var(--limBorder); margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow-x: auto;">
+                <table class="size_table">
+                    <thead>
+                        <tr>
+                            <th>Khu vực / Bộ phận</th>
+                            <th>Ngày làm việc</th>
+                            <th>Khung giờ phục vụ</th>
+                            <th>Dịch vụ hỗ trợ tại chỗ</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tất cả cửa hàng LIM</strong></td>
+                            <td>Thứ 2 - Thứ 6</td>
+                            <td>8:00 - 21:30</td>
+                            <td>Thử đồ, Mua trực tiếp, Đổi size miễn phí</td>
+                            <td><span style="color: #2e7d32; font-weight: 700;">● Đang mở cửa</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tất cả cửa hàng LIM</strong></td>
+                            <td>Thứ 7 &amp; Chủ Nhật</td>
+                            <td>8:00 - 22:00</td>
+                            <td>Phục vụ xuyên trưa, tư vấn phối đồ</td>
+                            <td><span style="color: #2e7d32; font-weight: 700;">● Đang mở cửa</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tổng đài tư vấn trực tuyến</strong></td>
+                            <td>Tất cả các ngày trong tuần</td>
+                            <td>7:30 - 22:00</td>
+                            <td>Giải đáp đơn hàng online, tra cứu lộ trình</td>
+                            <td><span style="color: #2e7d32; font-weight: 700;">● Trực 24/7</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trung tâm bảo hành may mặc</strong></td>
+                            <td>Thứ 2 - Thứ 7</td>
+                            <td>9:00 - 18:00</td>
+                            <td>Sửa đường chỉ trọn đời, dập cúc, thay dây kéo</td>
+                            <td><span style="color: #2e7d32; font-weight: 700;">● Tiếp nhận</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Khối Liên hệ gửi form & Bản đồ Google Maps nhúng Iframe (Lab 8.1 & Đề Assignment) -->
+            <div class="section_title">
+                <span>Gửi yêu cầu hỗ trợ / Bản đồ vị trí</span>
+            </div>
+
+            <section class="contact_map_grid">
+                <!-- Form gửi thắc mắc liên hệ (Thân thiện, không alert khó chịu) -->
+                <div class="contact_form_box">
+                    <h3><i class="fa-solid fa-headset" style="color: var(--limOrange); margin-right: 8px;"></i> Form tiếp nhận yêu cầu</h3>
+                    <p style="font-size: 13px; color: #666666; margin-bottom: 20px;">
+                        Quý khách vui lòng để lại thông tin, đội ngũ chăm sóc khách hàng của LIM sẽ liên hệ lại trong vòng 15 phút.
+                    </p>
+
+                    <form action="#" method="post" novalidate onsubmit="event.preventDefault(); document.getElementById('contact_feedback').style.display='block';">
+                        <div class="form_group">
+                            <label for="c_name">Họ và tên quý khách:</label>
+                            <input type="text" id="c_name" name="c_name" class="form_control" placeholder="Ví dụ: Nguyễn Văn A">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="c_phone">Số điện thoại liên hệ:</label>
+                            <input type="tel" id="c_phone" name="c_phone" class="form_control" placeholder="Ví dụ: 0901234567">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="c_email">Địa chỉ Email:</label>
+                            <input type="email" id="c_email" name="c_email" class="form_control" placeholder="example@gmail.com">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="c_branch">Chi nhánh gần bạn nhất:</label>
+                            <select id="c_branch" name="c_branch" class="form_control">
+                                <option value="hcm">Trụ sở 766 Võ Văn Kiệt - TP. Hồ Chí Minh</option>
+                                <option value="hn">Chi nhánh 120 Cầu Giấy - Hà Nội</option>
+                                <option value="dn">Chi nhánh 34 Lê Duẩn - Đà Nẵng</option>
+                                <option value="ct">Chi nhánh 45 Đường 30/4 - Cần Thơ</option>
+                            </select>
+                        </div>
+
+                        <div class="form_group">
+                            <label for="c_title">Tiêu đề thắc mắc:</label>
+                            <input type="text" id="c_title" name="c_title" class="form_control" placeholder="Ví dụ: Hỏi tư vấn size áo / Bảo hành khóa kéo">
+                        </div>
+
+                        <div class="form_group">
+                            <label for="c_content">Nội dung chi tiết:</label>
+                            <textarea id="c_content" name="c_content" rows="3" class="form_control" placeholder="Mô tả chi tiết nội dung cần hỗ trợ..."></textarea>
+                        </div>
+
+                        <div style="margin-top: 15px;">
+                            <button type="submit" class="btn_submit"><i class="fa-solid fa-paper-plane"></i> Gửi yêu cầu hỗ trợ</button>
+                            <button type="reset" class="btn_reset"><i class="fa-solid fa-rotate-left"></i> Nhập lại</button>
+                        </div>
+
+                        <div id="contact_feedback" class="form_feedback_msg">
+                            <i class="fa-solid fa-circle-check"></i> Cảm ơn bạn! Yêu cầu hỗ trợ đã được ghi nhận. Tư vấn viên LIM sẽ liên hệ lại với bạn sớm nhất.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Cột phải: Bản đồ Google Maps nhúng iframe theo Lab 8.1 -->
+                <div class="map_embed_box">
+                    <iframe 
+                        title="Vị trí chi nhánh LIM"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.684534839841!2d106.67784381533427!3d10.758778662459952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b88e1bfad%3A0xc39e99214777e486!2zNzY2IFbDtSBWxINuIEtp4buHdCwgUGjGsOG7nW5nIDEsIFF14bqtbiA1LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =========================================================================
+         3. FOOTER THƯƠNG HIỆU LIM.VN
+         ========================================================================= -->
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="footer_col">
+                <h4>Về LIM.vn</h4>
+                <p style="font-size: 13px; line-height: 1.6; margin-bottom: 12px; color: #aaaaaa;">
+                    LIM.vn - Chuỗi cửa hàng thời trang nam uy tín hàng đầu tại Việt Nam. Thiết kế &amp; sản xuất trực tiếp tại Việt Nam.
+                </p>
+                <ul>
+                    <li><a href="about.html">Giới thiệu thương hiệu</a></li>
+                    <li><a href="contact.html">Hệ thống 45+ chi nhánh</a></li>
+                    <li><a href="about.html">Tuyển dụng nhân sự</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Chính sách mua hàng</h4>
+                <ul>
+                    <li><a href="#">Chính sách đổi trả 365 ngày</a></li>
+                    <li><a href="#">Chính sách bảo hành trọn đời</a></li>
+                    <li><a href="#">Chính sách giao hàng hỏa tốc</a></li>
+                    <li><a href="#">Bảo mật thông tin khách hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Tổng đài hỗ trợ</h4>
+                <ul>
+                    <li>Mua hàng online: <b>1900 3508</b></li>
+                    <li>Chăm sóc khách hàng: <b>028 7307 1441</b></li>
+                    <li>Email hỗ trợ: support@lim.vn</li>
+                    <li>Thời gian: 8:00 - 21:30 hàng ngày</li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Kết nối với LIM.vn</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook: fb.com/limshop</a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i> TikTok: @lim_vn</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram: @lim.streetwear</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i> Hotline Zalo: 0353 807 079</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_bottom">
+            &copy; 2026 LIM.vn - Đồ án môn học WEB101 Thiết kế &amp; Xây dựng trang web - FPT Polytechnic.
+        </div>
+    </footer>
+
+</body>
+
+</html>

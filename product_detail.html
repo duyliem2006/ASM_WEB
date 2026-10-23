@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áo polo cá sấu lười ủi LIM-P01 - LIM.vn | Thời trang nam chính hãng</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/structure.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         1. HEADER / NAVBAR (DESKTOP HÀNG NGANG - MOBILE CỘT DỌC ẨN/HIỆN)
+         ========================================================================= -->
+    <header id="header_container">
+        <div class="header_inner">
+
+            <!-- Checkbox ẩn điều khiển đóng/mở Menu trên Mobile -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- Nút bấm 3 gạch Hamburger icon (Chỉ hiện khi thu nhỏ < 900px) -->
+            <label for="menu-toggle" class="menu-button" title="Mở / Đóng Menu">
+                <span class="open-icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </label>
+
+            <!-- Lớp phủ mờ nền khi menu mobile mở ra -->
+            <label for="menu-toggle" class="menu_backdrop"></label>
+
+            <!-- Logo LIM.vn -->
+            <a href="index.html" class="logo">LIM<span>.vn</span></a>
+
+            <!-- Menu điều hướng chính -->
+            <nav class="nav_menu">
+                <div class="nav_mobile_header">
+                    <span>Danh mục sản phẩm LIM.vn</span>
+                    <label for="menu-toggle" class="mobile_close_btn">&times;</label>
+                </div>
+
+                <a href="index.html">Trang chủ</a>
+                <a href="index.html#banchay">Bán chạy</a>
+                <a href="index.html#polo" class="active">Áo Polo</a>
+                <a href="index.html#somi">Áo sơ mi</a>
+                <a href="index.html#khoac">Áo khoác</a>
+                <a href="index.html#quan">Quần Jeans</a>
+                <a href="index.html#bangsize">Bảng size</a>
+                <a href="index.html#dichvu">Dịch vụ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="contact.html">Liên hệ</a>
+            </nav>
+
+            <!-- Tiện ích bên phải Header -->
+            <div class="header_utils">
+                <form action="index.html" method="get" class="header_search_form">
+                    <input type="text" name="q" placeholder="Tìm sản phẩm...">
+                    <button type="submit" class="search_icon_btn" title="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <a href="login.html" class="util_icon_link" title="Đăng nhập tài khoản"><i class="fa-regular fa-user"></i></a>
+                <a href="product_detail.html" class="util_icon_link" title="Giỏ hàng">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart_badge">3</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         2. BỐ CỤC CHÍNH WEBSITE
+         ========================================================================= -->
+    <div id="container">
+        <main id="main">
+
+            <!-- Breadcrumb điều hướng -->
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <span>/</span>
+                <a href="index.html#polo">Áo polo nam</a>
+                <span>/</span>
+                <strong>Áo polo cá sấu lười ủi LIM-P01</strong>
+            </div>
+
+            <!-- Khối chi tiết sản phẩm chính (CSS Grid & Flexbox theo Y3) -->
+            <section class="detail_container">
+                <!-- Cột trái: Hình ảnh sản phẩm -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="detail_img">
+                        <img id="mainProductImg" src="images/polo1.png" alt="Áo Polo Cá Sấu LIM-P01">
+                    </div>
+                    <!-- Bộ hình thu nhỏ (Thumbnails) -->
+                    <div style="display: flex; gap: 10px; justify-content: center;">
+                        <img src="images/polo1.png" alt="Polo 1" style="width: 70px; height: 70px; object-fit: contain; border: 2px solid var(--limOrange); border-radius: 6px; cursor: pointer; padding: 4px; background: #fafafa;" onclick="document.getElementById('mainProductImg').src=this.src;">
+                        <img src="images/polo2.png" alt="Polo 2" style="width: 70px; height: 70px; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 6px; cursor: pointer; padding: 4px; background: #fafafa;" onclick="document.getElementById('mainProductImg').src=this.src;">
+                        <img src="images/polo3.png" alt="Polo 3" style="width: 70px; height: 70px; object-fit: contain; border: 1px solid #e0e0e0; border-radius: 6px; cursor: pointer; padding: 4px; background: #fafafa;" onclick="document.getElementById('mainProductImg').src=this.src;">
+                    </div>
+                </div>
+
+                <!-- Cột phải: Thông tin & Đặt mua sản phẩm -->
+                <div class="detail_info">
+                    <h1>Áo polo cá sấu lười ủi thiết kế Regular Fit LIM-P01</h1>
+                    
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; font-size: 13px;">
+                        <span style="color: #ff9800;">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <strong>4.9</strong>
+                        </span>
+                        <span style="color: #888888;">|</span>
+                        <span style="color: #666666;">Mã SP: <strong>LIM-P01</strong></span>
+                        <span style="color: #888888;">|</span>
+                        <span style="color: #2e7d32; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Còn hàng</span>
+                    </div>
+
+                    <div class="detail_price">
+                        235.450đ
+                        <span class="old_price">277.000đ</span>
+                        <span style="font-size: 12px; background: #ff4500; color: #fff; padding: 2px 8px; border-radius: 4px; font-weight: 700; margin-left: 10px;">Tiết kiệm 15%</span>
+                    </div>
+
+                    <p style="font-size: 13px; line-height: 1.6; color: #555555; margin-bottom: 20px;">
+                        Dòng áo Polo cao cấp ứng dụng kỹ thuật dệt mắt chim hiện đại, chất vải 100% cotton dẻo dai giúp bề mặt áo phẳng phiu ngay cả sau khi giặt máy mà không cần là ủi phức tạp. Cổ áo dệt sợi đàn hồi giữ dáng suốt 365 ngày.
+                    </p>
+
+                    <form action="#" method="post" novalidate onsubmit="event.preventDefault(); document.getElementById('cart_added_alert').style.display='block';">
+                        <!-- Chọn màu sắc -->
+                        <div style="margin-bottom: 18px;">
+                            <label style="font-size: 13px; font-weight: 700; color: #333333;">Màu sắc: <span id="color_name" style="color: var(--limOrange);">Đen huyền bí</span></label>
+                            <div class="color_pill_group">
+                                <div class="color_dot active" style="background-color: #111111;" title="Đen" onclick="document.querySelectorAll('.color_dot').forEach(d=>d.classList.remove('active')); this.classList.add('active'); document.getElementById('color_name').innerText='Đen huyền bí';"></div>
+                                <div class="color_dot" style="background-color: #888888;" title="Xám tiêu" onclick="document.querySelectorAll('.color_dot').forEach(d=>d.classList.remove('active')); this.classList.add('active'); document.getElementById('color_name').innerText='Xám tiêu thời thượng';"></div>
+                                <div class="color_dot" style="background-color: #ffffff; border: 1px solid #ccc;" title="Trắng" onclick="document.querySelectorAll('.color_dot').forEach(d=>d.classList.remove('active')); this.classList.add('active'); document.getElementById('color_name').innerText='Trắng tinh thanh lịch';"></div>
+                                <div class="color_dot" style="background-color: #0b2545;" title="Xanh Navy" onclick="document.querySelectorAll('.color_dot').forEach(d=>d.classList.remove('active')); this.classList.add('active'); document.getElementById('color_name').innerText='Xanh Navy nam tính';"></div>
+                            </div>
+                        </div>
+
+                        <!-- Chọn kích cỡ (Size) -->
+                        <div style="margin-bottom: 18px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <label style="font-size: 13px; font-weight: 700; color: #333333;">Kích thước (Size):</label>
+                                <a href="#bangsize_chitiet" style="font-size: 12px; color: var(--limOrange); text-decoration: underline;"><i class="fa-solid fa-ruler-horizontal"></i> Xem bảng size chuẩn</a>
+                            </div>
+                            <div class="size_pill_group">
+                                <button type="button" class="size_pill_btn" onclick="document.querySelectorAll('.size_pill_btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">S (48 - 55kg)</button>
+                                <button type="button" class="size_pill_btn active" onclick="document.querySelectorAll('.size_pill_btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">M (56 - 65kg)</button>
+                                <button type="button" class="size_pill_btn" onclick="document.querySelectorAll('.size_pill_btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">L (66 - 74kg)</button>
+                                <button type="button" class="size_pill_btn" onclick="document.querySelectorAll('.size_pill_btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">XL (75 - 84kg)</button>
+                                <button type="button" class="size_pill_btn" onclick="document.querySelectorAll('.size_pill_btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">XXL (85 - 95kg)</button>
+                            </div>
+                        </div>
+
+                        <!-- Chọn số lượng & Nút hành động -->
+                        <div style="display: flex; align-items: center; margin-top: 20px; flex-wrap: wrap; gap: 15px;">
+                            <div class="qty_selector">
+                                <button type="button" class="qty_btn" onclick="let q=document.getElementById('product_qty'); if(q.value>1) q.value--;">-</button>
+                                <input type="number" id="product_qty" name="product_qty" value="1" min="1" max="99" class="qty_input">
+                                <button type="button" class="qty_btn" onclick="let q=document.getElementById('product_qty'); q.value++;">+</button>
+                            </div>
+
+                            <button type="submit" class="btn_buy" style="border: none; padding: 12px 24px; font-size: 13px; cursor: pointer; width: auto;">
+                                <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ hàng
+                            </button>
+
+                            <a href="contact.html" class="poster_btn" style="background-color: #111111; color: #ffffff; padding: 12px 24px; font-size: 13px;">
+                                Mua tại cửa hàng gần nhất
+                            </a>
+                        </div>
+
+                        <!-- Thông báo thêm giỏ hàng thành công -->
+                        <div id="cart_added_alert" class="form_feedback_msg">
+                            <i class="fa-solid fa-circle-check"></i> Đã thêm 01 Áo Polo Cá Sấu LIM-P01 vào giỏ hàng thành công!
+                        </div>
+                    </form>
+
+                    <!-- Cam kết dịch vụ khách hàng -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; padding-top: 20px; border-top: 1px solid #eeeeee; font-size: 12px; color: #555555;">
+                        <div><i class="fa-solid fa-truck-fast" style="color: var(--limOrange); margin-right: 6px;"></i> Giao hàng hỏa tốc trong 2 giờ</div>
+                        <div><i class="fa-solid fa-shield-halved" style="color: var(--limOrange); margin-right: 6px;"></i> Bảo hành đường may trọn đời</div>
+                        <div><i class="fa-solid fa-rotate-left" style="color: var(--limOrange); margin-right: 6px;"></i> Đổi trả hàng trong vòng 365 ngày</div>
+                        <div><i class="fa-solid fa-medal" style="color: var(--limOrange); margin-right: 6px;"></i> Cam kết 100% hàng chính hãng LIM</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bảng thông số đo đạc chuẩn theo chiều cao cân nặng (Y1 Table) -->
+            <div id="bangsize_chitiet" class="section_title">
+                <span>Bảng thông số chọn size chuẩn xác LIM.vn</span>
+            </div>
+            <div style="background-color: #ffffff; padding: 25px; border-radius: 12px; border: 1px solid var(--limBorder); margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow-x: auto;">
+                <table class="size_table">
+                    <thead>
+                        <tr>
+                            <th>Size Áo</th>
+                            <th>Chiều cao (cm)</th>
+                            <th>Cân nặng (kg)</th>
+                            <th>Dài áo (cm)</th>
+                            <th>Rộng ngực (cm)</th>
+                            <th>Rộng vai (cm)</th>
+                            <th>Kiểu phom dáng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>S</strong></td>
+                            <td>1m55 - 1m64</td>
+                            <td>48kg - 55kg</td>
+                            <td>66 cm</td>
+                            <td>48 cm</td>
+                            <td>42 cm</td>
+                            <td>Regular Fit vừa vặn</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M</strong></td>
+                            <td>1m65 - 1m72</td>
+                            <td>56kg - 65kg</td>
+                            <td>69 cm</td>
+                            <td>51 cm</td>
+                            <td>44 cm</td>
+                            <td>Regular Fit tôn dáng</td>
+                        </tr>
+                        <tr>
+                            <td><strong>L</strong></td>
+                            <td>1m73 - 1m78</td>
+                            <td>66kg - 74kg</td>
+                            <td>72 cm</td>
+                            <td>54 cm</td>
+                            <td>46 cm</td>
+                            <td>Regular Fit thoải mái</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XL</strong></td>
+                            <td>1m79 - 1m85</td>
+                            <td>75kg - 84kg</td>
+                            <td>74 cm</td>
+                            <td>57 cm</td>
+                            <td>48 cm</td>
+                            <td>Form rộng thể thao</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XXL</strong></td>
+                            <td>Trên 1m80</td>
+                            <td>85kg - 95kg</td>
+                            <td>76 cm</td>
+                            <td>60 cm</td>
+                            <td>50 cm</td>
+                            <td>Form Big Size rộng rãi</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Sản phẩm liên quan / Đề xuất mua cùng (CSS Grid 4 cột theo Y3) -->
+            <div class="section_title">
+                <span>Sản phẩm phù hợp phối cùng</span>
+            </div>
+
+            <section class="product_grid">
+                <!-- Sản phẩm 1 -->
+                <div class="product_card">
+                    <div class="badge_discount">Gợi ý phối đồ</div>
+                    <div class="product_img_wrap">
+                        <img src="images/quan1.png" alt="Quần Thun LIM" class="prod_img">
+                    </div>
+                    <div class="prod_body">
+                        <h3 class="prod_name"><a href="product_detail.html">Quần thun dáng ống rộng F5 LIM-Q01</a></h3>
+                        <div class="price_box">
+                            <span class="curr_price">464.950đ</span>
+                            <span class="old_price">547.000đ</span>
+                        </div>
+                        <a href="index.html#lightbox-quan1" class="btn_buy">Xem sản phẩm</a>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/khoac1.png" alt="Áo Khoác LIM" class="prod_img">
+                    </div>
+                    <div class="prod_body">
+                        <h3 class="prod_name"><a href="product_detail.html">Áo khoác dệt phối màu LIM-K01</a></h3>
+                        <div class="price_box">
+                            <span class="curr_price">350.000đ</span>
+                            <span class="old_price">420.000đ</span>
+                        </div>
+                        <a href="index.html#lightbox-khoac1" class="btn_buy">Xem sản phẩm</a>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="product_card">
+                    <div class="badge_discount">Mới nhất</div>
+                    <div class="product_img_wrap">
+                        <img src="images/somi1.png" alt="Áo Sơ Mi LIM" class="prod_img">
+                    </div>
+                    <div class="prod_body">
+                        <h3 class="prod_name"><a href="product_detail.html">Áo sơ mi vải không nhăn LIM-S01</a></h3>
+                        <div class="price_box">
+                            <span class="curr_price">303.450đ</span>
+                            <span class="old_price">357.000đ</span>
+                        </div>
+                        <a href="index.html#lightbox-somi1" class="btn_buy">Xem sản phẩm</a>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 4 -->
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/polo2.png" alt="Áo Polo Phối Bo LIM" class="prod_img">
+                    </div>
+                    <div class="prod_body">
+                        <h3 class="prod_name"><a href="product_detail.html">Áo polo phối bo dệt nổi LIM-P02</a></h3>
+                        <div class="price_box">
+                            <span class="curr_price">245.000đ</span>
+                            <span class="old_price">289.000đ</span>
+                        </div>
+                        <a href="index.html#polo" class="btn_buy">Xem sản phẩm</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =========================================================================
+         3. FOOTER THƯƠNG HIỆU LIM.VN
+         ========================================================================= -->
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="footer_col">
+                <h4>Về LIM.vn</h4>
+                <p style="font-size: 13px; line-height: 1.6; margin-bottom: 12px; color: #aaaaaa;">
+                    LIM.vn - Chuỗi cửa hàng thời trang nam uy tín hàng đầu tại Việt Nam. Thiết kế &amp; sản xuất trực tiếp tại Việt Nam.
+                </p>
+                <ul>
+                    <li><a href="about.html">Giới thiệu thương hiệu</a></li>
+                    <li><a href="contact.html">Hệ thống 45+ chi nhánh</a></li>
+                    <li><a href="about.html">Tuyển dụng nhân sự</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Chính sách mua hàng</h4>
+                <ul>
+                    <li><a href="#">Chính sách đổi trả 365 ngày</a></li>
+                    <li><a href="#">Chính sách bảo hành trọn đời</a></li>
+                    <li><a href="#">Chính sách giao hàng hỏa tốc</a></li>
+                    <li><a href="#">Bảo mật thông tin khách hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Tổng đài hỗ trợ</h4>
+                <ul>
+                    <li>Mua hàng online: <b>1900 3508</b></li>
+                    <li>Chăm sóc khách hàng: <b>028 7307 1441</b></li>
+                    <li>Email hỗ trợ: support@lim.vn</li>
+                    <li>Thời gian: 8:00 - 21:30 hàng ngày</li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Kết nối với LIM.vn</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook: fb.com/limshop</a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i> TikTok: @lim_vn</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram: @lim.streetwear</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i> Hotline Zalo: 0353 807 079</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_bottom">
+            &copy; 2026 LIM.vn - Đồ án môn học WEB101 Thiết kế &amp; Xây dựng trang web - FPT Polytechnic.
+        </div>
+    </footer>
+
+</body>
+
+</html>

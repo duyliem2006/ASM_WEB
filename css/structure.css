@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+/* =========================================================================
+   1. RESET & CSS BIẾN MÀU THEO CHUẨN THƯƠNG HIỆU LIM.VN
+   ========================================================================= */
+:root {
+    --limOrange: #FF4500;         /* Cam đặc trưng LIM.vn */
+    --limOrangeHover: #e03d00;
+    --limBlack: #111111;          /* Đen nhám sang trọng */
+    --limDark: #222222;
+    --limGrey: #666666;
+    --limLightGrey: #f5f5f5;
+    --limBorder: #e5e5e5;
+    --limWhite: #ffffff;
+    --mainTransition: all 0.3s ease-in-out;
+
+    /* Tương thích ngược với các class dùng biến cũ */
+    --yameOrange: var(--limOrange);
+    --yameOrangeHover: var(--limOrangeHover);
+    --yameBlack: var(--limBlack);
+    --yameDark: var(--limDark);
+    --yameGrey: var(--limGrey);
+    --yameLightGrey: var(--limLightGrey);
+    --yameBorder: var(--limBorder);
+    --yameWhite: var(--limWhite);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--limLightGrey);
+    color: #333333;
+    padding-top: 70px; /* Bù chiều cao cho fixed header */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+/* =========================================================================
+   2. THANH NAVBAR TRÊN DESKTOP (MÀN HÌNH RỘNG > 900px)
+   Menu hiển thị DẠNG HÀNG NGANG CHUẨN LIM.VN - KHÔNG BỊ NHẢY HÀNG
+   ========================================================================= */
+
+#header_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--limWhite);
+    border-bottom: 1px solid var(--limBorder);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.header_inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 15px;
+}
+
+/* Checkbox ẩn dùng cho Checkbox Hack Mobile Drawer */
+#menu-toggle {
+    display: none;
+}
+
+/* Nút bấm 3 gạch (Desktop mặc định ẩn đi) */
+.menu-button {
+    display: none;
+}
+
+/* Logo LIM.vn */
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--limBlack);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--limOrange);
+}
+
+.logo-tagline {
+    display: none; /* Hiện trên desktop lớn nếu cần */
+}
+
+/* Khối Menu trên Desktop: HÀNG NGANG - KHÔNG BỊ NHẢY HÀNG */
+.nav_menu {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav_menu a {
+    text-decoration: none;
+    color: #222222;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-transform: none; /* Chỉ viết hoa chữ cái đầu theo yêu cầu */
+    white-space: nowrap;  /* Tránh tuyệt đối xuống hàng/nhảy hàng */
+    letter-spacing: normal;
+    padding: 8px 3px;
+    position: relative;
+    transition: var(--mainTransition);
+}
+
+.nav_menu a:hover,
+.nav_menu a.active {
+    color: var(--limOrange);
+}
+
+.nav_menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--limOrange);
+    transition: width 0.3s ease;
+}
+
+.nav_menu a:hover::after,
+.nav_menu a.active::after {
+    width: 100%;
+}
+
+.nav_mobile_header {
+    display: none;
+}
+
+.menu_backdrop {
+    display: none;
+}
+
+/* Tiện ích bên phải Header (Tìm kiếm, User, Giỏ hàng) */
+.header_utils {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header_search_form {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 5px 12px;
+    transition: var(--mainTransition);
+}
+
+.header_search_form:focus-within {
+    border-color: var(--yameOrange);
+    background-color: var(--yameWhite);
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.2);
+}
+
+.header_search_form input {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    width: 160px;
+    color: #333333;
+}
+
+.search_icon_btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555555;
+    padding-left: 6px;
+    transition: color 0.2s;
+}
+
+.search_icon_btn:hover {
+    color: var(--yameOrange);
+}
+
+.util_icon_link {
+    font-size: 18px;
+    color: #222222;
+    text-decoration: none;
+    position: relative;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.util_icon_link:hover {
+    color: var(--yameOrange);
+}
+
+.cart_badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: var(--yameOrange);
+    color: var(--yameWhite);
+    font-size: 10px;
+    font-weight: 800;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================================================
+   3. KHUNG BỐ CỤC CHÍNH (CONTAINER)
+   ========================================================================= */
+
+#container {
+    width: 100%;
+    min-height: calc(100vh - 250px);
+}
+
+#main {
+    max-width: 1200px;
+    margin: 25px auto 50px auto;
+    padding: 0 15px;
+}
+
+/* =========================================================================
+   4. CHÂN TRANG (FOOTER PHONG CÁCH YAME.VN)
+   ========================================================================= */
+
+#footer {
+    background-color: var(--yameBlack);
+    color: #cccccc;
+    padding-top: 50px;
+    border-top: 3px solid var(--yameOrange);
+}
+
+.footer_inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 0 20px 40px 20px;
+}
+
+.footer_col h4 {
+    color: var(--limWhite);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    text-transform: none; /* Chỉ viết hoa chữ cái đầu */
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer_col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 2px;
+    background-color: var(--limOrange);
+}
+
+.footer_col ul {
+    list-style: none;
+}
+
+.footer_col ul li {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footer_col ul li a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: var(--mainTransition);
+}
+
+.footer_col ul li a:hover {
+    color: var(--limOrange);
+    padding-left: 5px;
+}
+
+.footer_col b {
+    color: var(--limOrange);
+}
+
+.footer_bottom {
+    background-color: #080808;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 12px;
+    color: #777777;
+    border-top: 1px solid #222222;
+}
+
+/* =========================================================================
+   5. RESPONSIVE MEDIA QUERIES
+   ========================================================================= */
+
+/* Đảm bảo màn hình laptop (901px - 1180px) thanh menu không bao giờ bị nhảy dòng */
+@media screen and (max-width: 1180px) and (min-width: 901px) {
+    .header_inner {
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .nav_menu {
+        gap: 8px;
+    }
+
+    .nav_menu a {
+        font-size: 12.5px;
+        padding: 6px 2px;
+    }
+
+    .header_search_form input {
+        width: 110px;
+    }
+}
+
+/* Chuẩn Lab 8.2 & Theo yêu cầu: Dưới 900px chuyển sang Drawer Sidebar */
+@media screen and (max-width: 900px) {
+
+    body {
+        padding-top: 60px;
+    }
+
+    .header_inner {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    /* 1. HIỆN NÚT 3 GẠCH TRÊN MOBILE */
+    .menu-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        background: #ffffff;
+        color: var(--yameBlack);
+        padding: 6px 12px;
+        border-radius: 6px;
+        line-height: 1;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-right: 12px;
+    }
+
+    .menu-button .close-icon {
+        display: none;
+    }
+
+    /* 2. MENU BIẾN THÀNH DRAWER SIDEBAR DỌC VÀ ẨN SANG TRÁI */
+    .nav_menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--yameWhite);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        z-index: 1001;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+
+        /* Giấu sang trái */
+        transform: translateX(-100%);
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Tiêu đề thanh menu Mobile có nút X đóng */
+    .nav_mobile_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        background-color: #f7f7f7;
+        border-bottom: 2px solid var(--yameOrange);
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--yameBlack);
+    }
+
+    .mobile_close_btn {
+        font-size: 26px;
+        cursor: pointer;
+        color: #888888;
+        line-height: 1;
+    }
+
+    .mobile_close_btn:hover {
+        color: var(--yameOrange);
+    }
+
+    .nav_menu a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 13px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav_menu a::after {
+        display: none;
+    }
+
+    .nav_menu a:hover,
+    .nav_menu a.active {
+        background-color: #fff4f0;
+        border-left: 4px solid var(--yameOrange);
+        padding-left: 16px;
+    }
+
+    /* 3. KHI TICK VÀO CHECKBOX -> MỞ MENU */
+    #menu-toggle:checked ~ .nav_menu {
+        transform: translateX(0);
+    }
+
+    /* Đổi icon 3 gạch thành dấu X trên nút cố định */
+    #menu-toggle:checked ~ .menu-button .open-icon {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ .menu-button .close-icon {
+        display: inline-block;
+    }
+
+    /* 4. LỚP PHỦ MỜ NỀN PHÍA SAU MENU */
+    #menu-toggle:checked ~ .menu_backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+        z-index: 1000;
+    }
+
+    /* Ẩn bớt thanh tìm kiếm mở rộng trên header để tránh chật chội */
+    .header_search_form input {
+        width: 100px;
+    }
+
+    .footer_inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header_search_form {
+        display: none; /* Trên màn hình cực nhỏ ẩn search form khỏi header */
+    }
+
+    .footer_inner {
+        grid-template-columns: 1fr;
+    }
+}

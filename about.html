@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu thương hiệu - LIM.vn | Thời trang nam thiết kế &amp; sản xuất tại Việt Nam</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/structure.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         1. HEADER / NAVBAR (DESKTOP HÀNG NGANG - MOBILE CỘT DỌC ẨN/HIỆN)
+         ========================================================================= -->
+    <header id="header_container">
+        <div class="header_inner">
+
+            <!-- Checkbox ẩn điều khiển đóng/mở Menu trên Mobile -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- Nút bấm 3 gạch Hamburger icon (Chỉ hiện khi thu nhỏ < 900px) -->
+            <label for="menu-toggle" class="menu-button" title="Mở / Đóng Menu">
+                <span class="open-icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </label>
+
+            <!-- Lớp phủ mờ nền khi menu mobile mở ra -->
+            <label for="menu-toggle" class="menu_backdrop"></label>
+
+            <!-- Logo LIM.vn -->
+            <a href="index.html" class="logo">LIM<span>.vn</span></a>
+
+            <!-- Menu điều hướng chính -->
+            <nav class="nav_menu">
+                <div class="nav_mobile_header">
+                    <span>Danh mục sản phẩm LIM.vn</span>
+                    <label for="menu-toggle" class="mobile_close_btn">&times;</label>
+                </div>
+
+                <a href="index.html">Trang chủ</a>
+                <a href="index.html#banchay">Bán chạy</a>
+                <a href="index.html#polo">Áo Polo</a>
+                <a href="index.html#somi">Áo sơ mi</a>
+                <a href="index.html#khoac">Áo khoác</a>
+                <a href="index.html#quan">Quần Jeans</a>
+                <a href="index.html#bangsize">Bảng size</a>
+                <a href="index.html#dichvu">Dịch vụ</a>
+                <a href="about.html" class="active">Giới thiệu</a>
+                <a href="contact.html">Liên hệ</a>
+            </nav>
+
+            <!-- Tiện ích bên phải Header -->
+            <div class="header_utils">
+                <form action="index.html" method="get" class="header_search_form">
+                    <input type="text" name="q" placeholder="Tìm sản phẩm...">
+                    <button type="submit" class="search_icon_btn" title="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <a href="login.html" class="util_icon_link" title="Đăng nhập tài khoản"><i class="fa-regular fa-user"></i></a>
+                <a href="product_detail.html" class="util_icon_link" title="Giỏ hàng">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart_badge">3</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         2. BỐ CỤC CHÍNH WEBSITE
+         ========================================================================= -->
+    <div id="container">
+        <main id="main">
+
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+                <span>/</span>
+                <strong>Về thương hiệu LIM.vn</strong>
+            </div>
+
+            <!-- Banner giới thiệu phong cách LIM -->
+            <section class="poster_banner" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #111111 0%, #2a2a2a 100%); color: #ffffff; padding: 40px; border-radius: 12px; margin-bottom: 35px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <div class="poster_content" style="flex: 1.2;">
+                    <span class="poster_tag">Câu chuyện thương hiệu</span>
+                    <h1 class="poster_title" style="color: #ffffff; font-size: 28px; margin: 10px 0;">LIM.vn - Thời trang nam thiết kế &amp; sản xuất tại Việt Nam</h1>
+                    <div class="poster_price" style="color: var(--limOrange); font-size: 17px; margin-bottom: 12px;">Bền &bull; Mềm &bull; Không lỗi mốt &bull; Giá tận xưởng</div>
+                    <p class="poster_desc" style="color: #dddddd; line-height: 1.7; font-size: 14px; margin-bottom: 20px;">
+                        Khởi nguồn từ niềm đam mê đem đến cho giới trẻ Việt Nam những trang phục thường ngày chất lượng cao, chuẩn dáng và bền bỉ. Trải qua hơn một thập kỷ hình thành và phát triển, LIM đã xây dựng chuỗi hơn 45 cửa hàng phủ rộng khắp các tỉnh thành, trở thành điểm đến mua sắm tin cậy của hàng triệu bạn trẻ.
+                    </p>
+                    <a href="index.html#banchay" class="poster_btn" style="background-color: var(--limOrange); color: #ffffff;">Khám phá bộ sưu tập</a>
+                </div>
+                <div class="poster_showcase" style="flex: 0.8; display: flex; justify-content: center; gap: 15px;">
+                    <img src="images/polo1.png" alt="Áo Polo LIM" style="height: 220px; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));">
+                    <img src="images/somi1.png" alt="Áo Sơ Mi LIM" style="height: 220px; object-fit: contain; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));">
+                </div>
+            </section>
+
+            <!-- 3 Giá trị cốt lõi (Flexbox/Grid theo tiêu chí Y3) -->
+            <div class="section_title">
+                <span>Giá trị cốt lõi của LIM</span>
+            </div>
+            <section class="services_grid">
+                <div class="service_card">
+                    <div class="service_icon"><i class="fa-solid fa-shirt" style="color: var(--limOrange);"></i></div>
+                    <h4>100% Tự thiết kế &amp; may đo</h4>
+                    <p>Toàn bộ rập áo, phom quần đều được nghiên cứu kỹ lưỡng theo số đo nhân trắc học của nam giới Việt, đảm bảo tôn dáng và thoải mái tối đa.</p>
+                </div>
+                <div class="service_card">
+                    <div class="service_icon"><i class="fa-solid fa-leaf" style="color: #2e7d32;"></i></div>
+                    <h4>Chất liệu thân thiện &amp; cao cấp</h4>
+                    <p>Ưu tiên sử dụng sợi Cotton tự nhiên, vải sợi dệt rổ thông thoáng, vải dù chống thấm nước đi mưa nhẹ, an toàn cho làn da người mặc.</p>
+                </div>
+                <div class="service_card">
+                    <div class="service_icon"><i class="fa-solid fa-hand-holding-heart" style="color: #d81b60;"></i></div>
+                    <h4>Đặt khách hàng làm trọng tâm</h4>
+                    <p>Cam kết bảo hành đường kim mũi chỉ trọn đời, đổi trả linh hoạt 365 ngày và tư vấn tận tâm tại toàn bộ hệ thống chi nhánh.</p>
+                </div>
+            </section>
+
+            <!-- Bảng tiêu chuẩn chất lượng (Table theo tiêu chí Y1 trong Assignment.pdf) -->
+            <div class="section_title">
+                <span>Tiêu chuẩn chất lượng vải &amp; Chính sách bảo hành</span>
+            </div>
+            <div style="background-color: #ffffff; padding: 25px; border-radius: 12px; border: 1px solid var(--limBorder); margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow-x: auto;">
+                <table class="size_table">
+                    <thead>
+                        <tr>
+                            <th>Dòng sản phẩm</th>
+                            <th>Thành phần chất liệu</th>
+                            <th>Đặc tính vải nổi bật</th>
+                            <th>Độ bền màu &amp; co rút</th>
+                            <th>Chính sách bảo hành</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Áo Polo LIM</strong></td>
+                            <td>100% Cotton cá sấu dệt tổ ong</td>
+                            <td>Thấm hút mồ hôi, "Lười ủi" giữ nếp cổ áo</td>
+                            <td>Cấp 4-5 (Không bay màu khi giặt máy)</td>
+                            <td>Bảo hành bo cổ, đường chỉ 365 ngày</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Áo sơ mi nam</strong></td>
+                            <td>Modal kết hợp sợi Poly cao cấp</td>
+                            <td>Chống nhăn tự nhiên, dệt rổ sọc hiện đại</td>
+                            <td>Không nhăn nhàu sau khi vắt</td>
+                            <td>Bảo hành cúc áo &amp; đường may trọn đời</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Áo khoác thể thao</strong></td>
+                            <td>Vải dù Micro 2 lớp cản gió</td>
+                            <td>Trượt nước khi mưa nhẹ, thoáng khí lưng áo</td>
+                            <td>Chống tia UV tiêu chuẩn UPF 50+</td>
+                            <td>Bảo hành khóa kéo YKK trọn đời</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quần thun &amp; Jeans</strong></td>
+                            <td>Cotton Denim co giãn Spandex</td>
+                            <td>Dáng ống rộng F5 Streetwear thoải mái</td>
+                            <td>Xử lý wash enzym giữ màu bền bỉ</td>
+                            <td>Bảo hành nút đồng, khóa kéo trọn đời</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Khảo sát & Phản hồi khách hàng (Forms theo tiêu chí Y1 - Thiết kế thân thiện, không alert khó chịu) -->
+            <div class="section_title">
+                <span>Giao lưu &amp; Phản hồi ý kiến khách hàng</span>
+            </div>
+
+            <section class="forms_wrapper">
+                <!-- Form Đăng ký nhận tin ưu đãi -->
+                <div class="form_box">
+                    <div class="form_header"><i class="fa-solid fa-envelope-open-text" style="color: var(--limOrange); margin-right: 8px;"></i> Đăng ký nhận voucher thành viên</div>
+                    <form action="#" method="post" novalidate onsubmit="event.preventDefault(); document.getElementById('newsletter_done').style.display='block';">
+                        <div class="form_group">
+                            <label for="newsletter_email">Địa chỉ Email của bạn:</label>
+                            <input type="email" id="newsletter_email" name="newsletter_email" class="form_control" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form_group">
+                            <label>Dòng sản phẩm bạn quan tâm nhất:</label>
+                            <div style="margin-top: 8px;">
+                                <label class="chk_label"><input type="checkbox" name="interest" value="polo" checked> Áo Polo</label>
+                                <label class="chk_label"><input type="checkbox" name="interest" value="somi"> Áo sơ mi</label>
+                                <label class="chk_label"><input type="checkbox" name="interest" value="khoac"> Áo khoác</label>
+                                <label class="chk_label"><input type="checkbox" name="interest" value="quan"> Quần Jeans</label>
+                            </div>
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <button type="submit" class="btn_submit"><i class="fa-solid fa-paper-plane"></i> Đăng ký nhận tin</button>
+                        </div>
+                        <div id="newsletter_done" class="form_feedback_msg">
+                            <i class="fa-solid fa-circle-check"></i> Cảm ơn bạn! Mã voucher giảm giá 15% đã được gửi đến email của bạn.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Form Khảo sát ý kiến đóng góp -->
+                <div class="form_box">
+                    <div class="form_header"><i class="fa-solid fa-comments" style="color: var(--limOrange); margin-right: 8px;"></i> Khảo sát chất lượng phục vụ</div>
+                    <form action="#" method="post" novalidate onsubmit="event.preventDefault(); document.getElementById('survey_done').style.display='block';">
+                        <div class="form_group">
+                            <label for="survey_name">Họ và tên của bạn:</label>
+                            <input type="text" id="survey_name" name="survey_name" class="form_control" placeholder="Nhập họ và tên...">
+                        </div>
+                        <div class="form_group">
+                            <label for="survey_rating">Mức độ hài lòng với sản phẩm và dịch vụ:</label>
+                            <select id="survey_rating" name="survey_rating" class="form_control">
+                                <option value="5">⭐⭐⭐⭐⭐ Cực kỳ hài lòng (5 sao)</option>
+                                <option value="4">⭐⭐⭐⭐ Hài lòng (4 sao)</option>
+                                <option value="3">⭐⭐⭐ Bình thường (3 sao)</option>
+                                <option value="2">⭐⭐ Chưa hài lòng (2 sao)</option>
+                            </select>
+                        </div>
+                        <div class="form_group">
+                            <label for="survey_comment">Góp ý cải thiện dịch vụ của LIM:</label>
+                            <textarea id="survey_comment" name="survey_comment" rows="3" class="form_control" placeholder="Bạn mong muốn LIM cải tiến thêm điều gì?"></textarea>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <button type="submit" class="btn_submit"><i class="fa-solid fa-check"></i> Gửi khảo sát</button>
+                            <button type="reset" class="btn_reset"><i class="fa-solid fa-rotate-left"></i> Nhập lại</button>
+                        </div>
+                        <div id="survey_done" class="form_feedback_msg">
+                            <i class="fa-solid fa-circle-check"></i> Trân trọng cảm ơn ý kiến đóng góp quý báu của bạn!
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =========================================================================
+         3. FOOTER THƯƠNG HIỆU LIM.VN
+         ========================================================================= -->
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="footer_col">
+                <h4>Về LIM.vn</h4>
+                <p style="font-size: 13px; line-height: 1.6; margin-bottom: 12px; color: #aaaaaa;">
+                    LIM.vn - Chuỗi cửa hàng thời trang nam uy tín hàng đầu tại Việt Nam. Thiết kế &amp; sản xuất trực tiếp tại Việt Nam.
+                </p>
+                <ul>
+                    <li><a href="about.html">Giới thiệu thương hiệu</a></li>
+                    <li><a href="contact.html">Hệ thống 45+ chi nhánh</a></li>
+                    <li><a href="about.html">Tuyển dụng nhân sự</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Chính sách mua hàng</h4>
+                <ul>
+                    <li><a href="#">Chính sách đổi trả 365 ngày</a></li>
+                    <li><a href="#">Chính sách bảo hành trọn đời</a></li>
+                    <li><a href="#">Chính sách giao hàng hỏa tốc</a></li>
+                    <li><a href="#">Bảo mật thông tin khách hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Tổng đài hỗ trợ</h4>
+                <ul>
+                    <li>Mua hàng online: <b>1900 3508</b></li>
+                    <li>Chăm sóc khách hàng: <b>028 7307 1441</b></li>
+                    <li>Email hỗ trợ: support@lim.vn</li>
+                    <li>Thời gian: 8:00 - 21:30 hàng ngày</li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Kết nối với LIM.vn</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook: fb.com/limshop</a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i> TikTok: @lim_vn</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram: @lim.streetwear</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i> Hotline Zalo: 0353 807 079</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_bottom">
+            &copy; 2026 LIM.vn - Đồ án môn học WEB101 Thiết kế &amp; Xây dựng trang web - FPT Polytechnic.
+        </div>
+    </footer>
+
+</body>
+
+</html>

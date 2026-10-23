@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIM.vn - Thiết Kế &amp; Sản Xuất Tại Việt Nam | Thời Trang Nam Chính Hãng</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="css/structure.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
+</head>
+
+<body>
+
+    <!-- =========================================================================
+         1. HEADER / NAVBAR (DESKTOP HÀNG NGANG - MOBILE CỘT DỌC ẨN/HIỆN)
+         ========================================================================= -->
+    <header id="header_container">
+        <div class="header_inner">
+
+            <!-- Checkbox ẩn điều khiển đóng/mở Menu trên Mobile (Checkbox Hack Lab 5.1 & 8.2) -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- Nút bấm 3 gạch Hamburger icon (Chỉ hiện khi thu nhỏ < 900px) -->
+            <label for="menu-toggle" class="menu-button" title="Mở / Đóng Menu">
+                <span class="open-icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </label>
+
+            <!-- Lớp phủ mờ nền khi menu mobile mở ra -->
+            <label for="menu-toggle" class="menu_backdrop"></label>
+
+            <!-- Logo LIM.vn -->
+            <a href="index.html" class="logo">LIM<span>.vn</span></a>
+
+            <!-- Menu điều hướng chính: Desktop xếp ngang, Mobile xếp dọc dạng Drawer -->
+            <nav class="nav_menu">
+                <div class="nav_mobile_header">
+                    <span>Danh mục sản phẩm LIM.vn</span>
+                    <label for="menu-toggle" class="mobile_close_btn">&times;</label>
+                </div>
+
+                <a href="index.html" class="active">Trang chủ</a>
+                <a href="#banchay">Bán chạy</a>
+                <a href="#polo">Áo Polo</a>
+                <a href="#somi">Áo sơ mi</a>
+                <a href="#khoac">Áo khoác</a>
+                <a href="#quan">Quần Jeans</a>
+                <a href="#bangsize">Bảng size</a>
+                <a href="#dichvu">Dịch vụ</a>
+                <a href="about.html">Giới thiệu</a>
+                <a href="contact.html">Liên hệ</a>
+            </nav>
+
+            <!-- Tiện ích bên phải Header: Tìm kiếm, Tài khoản, Giỏ hàng -->
+            <div class="header_utils">
+                <form action="index.html" method="get" class="header_search_form" onsubmit="event.preventDefault();">
+                    <input type="text" id="search_input" name="q" placeholder="Tìm sản phẩm..." onkeyup="filterProducts()">
+                    <button type="submit" class="search_icon_btn" title="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <a href="login.html" class="util_icon_link" title="Đăng nhập tài khoản"><i class="fa-regular fa-user"></i></a>
+                <a href="product_detail.html" class="util_icon_link" title="Giỏ hàng">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart_badge">3</span>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =========================================================================
+         2. BỐ CỤC CHÍNH WEBSITE (CONTAINER & MAIN)
+         ========================================================================= -->
+    <div id="container">
+        <main id="main">
+
+            <!-- 2.1 SLIDESHOW BANNER (TỰ ĐỘNG CHUYỂN SLIDE BẰNG CSS KEYFRAMES THEO LAB 7.2 & DEMO) -->
+            <section class="slideshow_wrapper">
+                <div class="slideshow_inner">
+                    <!-- Slide 1: BST Polo & Sơ mi -->
+                    <div class="slide_item">
+                        <div class="poster_content">
+                            <span class="poster_tag">Bộ sưu tập 2026</span>
+                            <h2 class="poster_title">Bộ sưu tập Polo &amp; Sơ mi mới</h2>
+                            <div class="poster_price">Giảm đến 50% &bull; Chỉ từ 199.000đ</div>
+                            <p class="poster_desc">Trang phục nam chất liệu Cotton Compact 100% tự nhiên, co giãn 4 chiều, không nhăn xù, tôn phom dáng người Việt.</p>
+                            <a href="#banchay" class="poster_btn">Xem sản phẩm mở bán</a>
+                        </div>
+                        <div class="poster_showcase">
+                            <img src="images/polo1.png" alt="Áo Polo LIM-P01">
+                            <img src="images/somi1.png" alt="Áo Sơ Mi LIM-S01">
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Streetwear Áo khoác & Quần -->
+                    <div class="slide_item slide_item_dark">
+                        <div class="poster_content">
+                            <span class="poster_tag">Streetwear phong cách mới</span>
+                            <h2 class="poster_title">Áo khoác &amp; Quần jeans ống rộng</h2>
+                            <div class="poster_price">Mua 2 giảm thêm 20% &bull; Tặng voucher 100K</div>
+                            <p class="poster_desc">Thiết kế phong cách đường phố năng động, chất liệu dù chống trượt nước, phom dáng rộng rãi cực chất.</p>
+                            <a href="#khoac" class="poster_btn">Mua ngay ưu đãi</a>
+                        </div>
+                        <div class="poster_showcase">
+                            <img src="images/khoac1.png" alt="Áo Khoác LIM-K01">
+                            <img src="images/quan1.png" alt="Quần Thun LIM-Q01">
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Siêu Sale Cuối Mùa -->
+                    <div class="slide_item slide_item_orange">
+                        <div class="poster_content">
+                            <span class="poster_tag">Siêu sale đặc biệt</span>
+                            <h2 class="poster_title">Festival sale - Đồng giá 149K</h2>
+                            <div class="poster_price">Áp dụng duy nhất trong tuần này</div>
+                            <p class="poster_desc">Hàng ngàn sản phẩm áo thun, sơ mi, quần kaki mở bán mức giá sốc không thể bỏ lỡ tại hệ thống LIM.vn.</p>
+                            <a href="#banchay" class="poster_btn">Săn deal ngay</a>
+                        </div>
+                        <div class="poster_showcase">
+                            <img src="images/polo2.png" alt="Áo Polo LIM-P02">
+                            <img src="images/somi2.png" alt="Áo Sơ Mi LIM-S02">
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: LIM Basic Cotton -->
+                    <div class="slide_item slide_item_blue">
+                        <div class="poster_content">
+                            <span class="poster_tag">Dòng sản phẩm LIM Basic</span>
+                            <h2 class="poster_title">Trang phục nam bền, mềm, không lỗi mốt</h2>
+                            <div class="poster_price">Bảo hành đường may trọn đời</div>
+                            <p class="poster_desc">Tinh thần tối giản trường tồn cùng thời gian. Dễ phối đồ, thanh lịch từ công sở đến dạo phố.</p>
+                            <a href="about.html" class="poster_btn">Khám phá thương hiệu</a>
+                        </div>
+                        <div class="poster_showcase">
+                            <img src="images/khoac2.png" alt="Áo Khoác LIM-K02">
+                            <img src="images/quan2.png" alt="Quần LIM-Q02">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.2 FEATURES (4 ĐIỂM MẠNH - THEO TRANG 2 ĐỀ ASSIGNMENT.PDF) -->
+            <section class="features_section">
+                <div class="feature_box">
+                    <span class="feature_icon">🚚</span>
+                    <h4>Miễn phí vận chuyển</h4>
+                    <p>Giao hàng tận nhà miễn phí toàn quốc cho đơn hàng từ 500.000đ.</p>
+                </div>
+                <div class="feature_box">
+                    <span class="feature_icon">🔄</span>
+                    <h4>Đổi trả 365 ngày</h4>
+                    <p>Đổi sản phẩm tận nơi hoàn toàn miễn phí nếu không ưng ý hoặc sai kích cỡ.</p>
+                </div>
+                <div class="feature_box">
+                    <span class="feature_icon">🛡️</span>
+                    <h4>Bảo hành trọn đời</h4>
+                    <p>Bảo hành đường may, cúc áo, dây kéo kim loại trọn đời tại mọi cửa hàng.</p>
+                </div>
+                <div class="feature_box">
+                    <span class="feature_icon">🌿</span>
+                    <h4>100% Cotton tự nhiên</h4>
+                    <p>Chất liệu cao cấp thoáng khí, mềm mại, an toàn tuyệt đối cho làn da.</p>
+                </div>
+            </section>
+
+            <!-- 2.3 TOP SẢN PHẨM BÁN CHẠY (BEST SELLERS & LIGHTBOX PHÓNG TO ẢNH) -->
+            <div class="section_title" id="banchay">
+                <span>Sản phẩm bán chạy nhất</span>
+                <a href="#polo">Xem tất cả &gt;</a>
+            </div>
+
+            <section class="product_grid">
+                <!-- Card 1 -->
+                <div class="product_card">
+                    <div class="badge_discount">#1 Bán chạy</div>
+                    <div class="product_img_wrap">
+                        <img src="images/polo1.png" alt="Áo Polo LIM-P01">
+                        <a href="#lightbox-polo1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo polo cá sấu lười ủi LIM-P01</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">235.450đ</span>
+                        <span class="old_price">277.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product_card">
+                    <div class="badge_discount">#2 Bán chạy</div>
+                    <div class="product_img_wrap">
+                        <img src="images/somi1.png" alt="Áo Sơ Mi LIM-S01">
+                        <a href="#lightbox-somi1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo sơ mi vải không nhăn LIM-S01</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">303.450đ</span>
+                        <span class="old_price">357.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product_card">
+                    <div class="badge_discount">#3 Bán chạy</div>
+                    <div class="product_img_wrap">
+                        <img src="images/khoac1.png" alt="Áo Khoác LIM-K01">
+                        <a href="#lightbox-khoac1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo khoác dệt phối màu LIM-K01</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">350.000đ</span>
+                        <span class="old_price">420.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product_card">
+                    <div class="badge_discount">#4 Bán chạy</div>
+                    <div class="product_img_wrap">
+                        <img src="images/quan1.png" alt="Quần Thun LIM-Q01">
+                        <a href="#lightbox-quan1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Quần thun dáng ống siêu rộng LIM-Q01</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">464.950đ</span>
+                        <span class="old_price">547.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+            </section>
+
+            <!-- 2.4 ABOUT STORY & YOUTUBE RESPONSIVE VIDEO (HỌC TỪ LAB 8.1 & ĐỀ ASSIGNMENT.PDF) -->
+            <section class="about_showcase_section">
+                <div class="about_text_col">
+                    <h3>Về thương hiệu LIM.vn</h3>
+                    <p><strong>LIM.vn</strong> là thương hiệu thời trang nam hàng đầu tại Việt Nam, tiên phong theo đuổi phong cách thiết kế tối giản, hiện đại và trẻ trung.</p>
+                    <p>Với triết lý <em>"Bền - Mềm - Không Lỗi Mốt"</em>, chúng tôi đầu tư tâm huyết vào từng đường kim mũi chỉ, ứng dụng công nghệ dệt tiên tiến giúp sợi vải thoáng mát, không xù lông và giữ phom dáng hoàn hảo.</p>
+                    <p>Xem video lookbook bên cạnh để khám phá quy trình may đo và sản xuất kỳ công phía sau mỗi sản phẩm LIM!</p>
+                    <a href="about.html" class="poster_btn" style="margin-top: 10px;">Tìm hiểu thêm về LIM</a>
+                </div>
+                <div class="about_video_col">
+                    <div class="video_responsive_container">
+                        <iframe 
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY" 
+                            title="Video Lookbook LIM.vn"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.5 BẢNG THÔNG SỐ CHỌN SIZE (TABLE BẮT BUỘC THEO Y1 ASSIGNMENT.PDF) -->
+            <div class="section_title" id="bangsize">
+                <span>Bảng hướng dẫn chọn size chuẩn nam giới</span>
+            </div>
+            <div class="table_responsive_wrapper">
+                <table class="size_table">
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Chiều cao (cm)</th>
+                            <th>Cân nặng (kg)</th>
+                            <th>Vòng ngực (cm)</th>
+                            <th>Dài áo (cm)</th>
+                            <th>Khuyên dùng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>S</strong></td>
+                            <td>155 - 165</td>
+                            <td>48 - 55</td>
+                            <td>88 - 92</td>
+                            <td>66</td>
+                            <td>Người dáng thon gọn</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M</strong></td>
+                            <td>164 - 172</td>
+                            <td>56 - 65</td>
+                            <td>93 - 97</td>
+                            <td>69</td>
+                            <td>Dáng người vừa vặn tiêu chuẩn</td>
+                        </tr>
+                        <tr>
+                            <td><strong>L</strong></td>
+                            <td>170 - 178</td>
+                            <td>66 - 75</td>
+                            <td>98 - 102</td>
+                            <td>72</td>
+                            <td>Dáng người hơi đậm, thể thao</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XL</strong></td>
+                            <td>175 - 183</td>
+                            <td>76 - 85</td>
+                            <td>103 - 108</td>
+                            <td>74</td>
+                            <td>Thích mặc rộng rãi thoải mái</td>
+                        </tr>
+                        <tr>
+                            <td><strong>XXL</strong></td>
+                            <td>180 - 190</td>
+                            <td>86 - 98</td>
+                            <td>109 - 116</td>
+                            <td>76</td>
+                            <td>Form Big Size chuẩn thoải mái</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 2.6 DANH MỤC: ÁO POLO -->
+            <div class="section_title" id="polo">
+                <span>Bộ sưu tập áo polo nam cao cấp</span>
+                <a href="#banchay">Về đầu trang ↑</a>
+            </div>
+            <section class="product_grid">
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/polo1.png" alt="Áo Polo LIM-P01">
+                        <a href="#lightbox-polo1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo polo cá sấu lười ủi LIM-P01 (Trắng)</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">235.450đ</span>
+                        <span class="old_price">277.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/polo2.png" alt="Áo Polo LIM-P02">
+                        <a href="#lightbox-polo1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo polo cá sấu lười ủi LIM-P02 (Xanh rêu)</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">235.450đ</span>
+                        <span class="old_price">277.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/polo3.png" alt="Áo Polo LIM-P03">
+                        <a href="#lightbox-polo1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo polo phối bo cổ dệt nổi LIM-P03 (Đen)</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">235.450đ</span>
+                        <span class="old_price">277.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-20%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/polo1.png" alt="Áo Polo LIM-P04">
+                        <a href="#lightbox-polo1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo polo classic thêu ngực LIM-P04</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">220.000đ</span>
+                        <span class="old_price">275.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+            </section>
+
+            <!-- 2.7 DANH MỤC: ÁO SƠ MI & KHOÁC -->
+            <div class="section_title" id="somi">
+                <span>Áo sơ mi công sở &amp; Áo khoác thể thao</span>
+                <a href="#banchay">Về đầu trang ↑</a>
+            </div>
+            <section class="product_grid">
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/somi1.png" alt="Áo Sơ mi LIM-S01">
+                        <a href="#lightbox-somi1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo sơ mi vải không nhăn dệt rổ LIM-S01</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">303.450đ</span>
+                        <span class="old_price">357.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/somi2.png" alt="Áo Sơ mi LIM-S02">
+                        <a href="#lightbox-somi1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo sơ mi dệt rổ sọc hiện đại LIM-S02</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">320.450đ</span>
+                        <span class="old_price">377.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card" id="khoac">
+                    <div class="badge_discount">-18%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/khoac2.png" alt="Áo Khoác LIM-K02">
+                        <a href="#lightbox-khoac1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo khoác gió kháng nước LIM-K02</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">385.000đ</span>
+                        <span class="old_price">470.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/khoac3.png" alt="Áo Khoác LIM-K03">
+                        <a href="#lightbox-khoac1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Áo khoác bomber thêu logo LIM-K03</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">410.000đ</span>
+                        <span class="old_price">490.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+            </section>
+
+            <!-- 2.8 DANH MỤC: QUẦN THUN & QUẦN JEANS -->
+            <div class="section_title" id="quan">
+                <span>Quần thun &amp; Quần jeans nam chuẩn dáng</span>
+                <a href="#banchay">Về đầu trang ↑</a>
+            </div>
+            <section class="product_grid">
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/quan1.png" alt="Quần LIM-Q01">
+                        <a href="#lightbox-quan1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Quần thun dáng ống siêu rộng F5 LIM-Q01</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">464.950đ</span>
+                        <span class="old_price">547.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/quan2.png" alt="Quần LIM-Q02">
+                        <a href="#lightbox-quan1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Quần thun jogging bo gấu LIM-Q02</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">485.000đ</span>
+                        <span class="old_price">570.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-15%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/quan3.png" alt="Quần LIM-Q03">
+                        <a href="#lightbox-quan1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Quần thun baggy thể thao LIM-Q03</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">567.150đ</span>
+                        <span class="old_price">667.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+
+                <div class="product_card">
+                    <div class="badge_discount">-20%</div>
+                    <div class="product_img_wrap">
+                        <img src="images/quan1.png" alt="Quần Jeans LIM-Q04">
+                        <a href="#lightbox-quan1" class="zoom_btn" title="Phóng to ảnh (Lightbox)"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+                    </div>
+                    <h3 class="prod_name"><a href="product_detail.html">Quần jeans straight fit co giãn LIM-Q04</a></h3>
+                    <div class="price_box">
+                        <span class="curr_price">420.000đ</span>
+                        <span class="old_price">525.000đ</span>
+                    </div>
+                    <a href="product_detail.html" class="btn_buy">Mua ngay</a>
+                </div>
+            </section>
+
+            <!-- 2.9 DỊCH VỤ KHÁCH HÀNG (SERVICES - THEO TRANG 2 ĐỀ ASSIGNMENT.PDF) -->
+            <div class="section_title" id="dichvu">
+                <span>Dịch vụ đặc quyền tại LIM.vn</span>
+            </div>
+            <section class="services_grid">
+                <div class="service_card">
+                    <span class="service_icon">🧵</span>
+                    <h4>Đặt may &amp; In theo yêu cầu</h4>
+                    <p>Hỗ trợ thiết kế, in thêu logo cá nhân, áo lớp, áo nhóm hoặc đồng phục doanh nghiệp với số lượng từ 10 sản phẩm.</p>
+                </div>
+                <div class="service_card">
+                    <span class="service_icon">⚡</span>
+                    <h4>Giao hàng hỏa tốc 2 giờ</h4>
+                    <p>Dịch vụ giao hàng siêu tốc trong vòng 2 giờ tại nội thành TP.HCM và Hà Nội, nhận đồ ngay khi cần tiệc tùng.</p>
+                </div>
+                <div class="service_card">
+                    <span class="service_icon">👑</span>
+                    <h4>Thành viên VIP LIM Member</h4>
+                    <p>Tích điểm nâng hạng thẻ thành viên, hoàn tiền đến 10% mỗi đơn hàng và nhận quà sinh nhật trị giá 200.000đ.</p>
+                </div>
+            </section>
+
+            <!-- 2.10 TÍCH HỢP MẠNG XÃ HỘI (FACEBOOK WIDGETS - HỌC TỪ LAB 7.2) -->
+            <div class="section_title">
+                <span>Tương tác cùng cộng đồng LIM.vn</span>
+            </div>
+            <section class="social_widget_section">
+                <div class="social_widget_grid">
+                    <div class="social_card">
+                        <h4><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Fanpage chính thức</h4>
+                        <p>Bấm Like &amp; Share để cập nhật thông báo về các bộ sưu tập giới hạn mới nhất:</p>
+                        <div class="mock_fb_bar">
+                            <button class="mock_fb_btn" onclick="alert('Cảm ơn bạn đã thích Fanpage LIM.vn!')"><i class="fa-solid fa-thumbs-up"></i> Thích Trang</button>
+                            <button class="mock_fb_btn mock_share_btn" onclick="alert('Đã sao chép link chia sẻ!')"><i class="fa-solid fa-share"></i> Chia sẻ</button>
+                            <span style="font-size: 11px; color: #666;">2.4M lượt theo dõi trên Facebook</span>
+                        </div>
+                    </div>
+
+                    <div class="social_card">
+                        <h4><i class="fa-solid fa-comments" style="color: #ff4500;"></i> Đánh giá từ khách hàng</h4>
+                        <p>Phản hồi thực tế từ các tín đồ thời trang đã trải nghiệm sản phẩm LIM:</p>
+                        <div class="comment_box_mock">
+                            <div class="comment_user">Nguyễn Minh Tuấn &bull; ⭐⭐⭐⭐⭐</div>
+                            <div class="comment_text">"Áo Polo chất vải cá sấu mặc rất êm, giặt máy xong rũ nhẹ là phẳng phiu không cần ủi, form áo tôn vai cực đẹp!"</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2.11 LIÊN HỆ & BẢN ĐỒ GOOGLE MAPS (HỌC TỪ LAB 8.1 & ĐỀ ASSIGNMENT.PDF) -->
+            <div class="section_title" id="lienhe">
+                <span>Liên hệ &amp; Hệ thống cửa hàng</span>
+            </div>
+            <section class="contact_map_grid">
+                <!-- Cột trái: Form gửi liên hệ thân thiện (Y1) -->
+                <div class="contact_form_box">
+                    <h3>Gửi yêu cầu tư vấn / Đặt hàng</h3>
+                    <form action="contact.html" method="post" novalidate onsubmit="event.preventDefault(); document.getElementById('home_contact_done').style.display='block';">
+                        <div class="form_group">
+                            <label for="name">Họ và tên của bạn:</label>
+                            <input type="text" id="name" name="name" class="form_control" placeholder="Ví dụ: Nguyễn Văn A">
+                        </div>
+                        <div class="form_group">
+                            <label for="email">Địa chỉ Email:</label>
+                            <input type="email" id="email" name="email" class="form_control" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form_group">
+                            <label for="phone">Số điện thoại:</label>
+                            <input type="tel" id="phone" name="phone" class="form_control" placeholder="0901234567">
+                        </div>
+                        <div class="form_group">
+                            <label for="message">Nội dung thắc mắc / Đơn hàng cần tư vấn:</label>
+                            <textarea id="message" name="message" class="form_control" rows="3" placeholder="Nhập tin nhắn..."></textarea>
+                        </div>
+                        <button type="submit" class="btn_buy" style="cursor: pointer; border: none; padding: 12px; font-size: 13px;">Gửi tin nhắn ngay</button>
+                        <div id="home_contact_done" class="form_feedback_msg">
+                            <i class="fa-solid fa-circle-check"></i> Cảm ơn bạn đã liên hệ! LIM sẽ phản hồi trong 15 phút.
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Cột phải: Bản đồ Google Maps nhúng iframe (Lab 8.1) -->
+                <div class="map_embed_box">
+                    <iframe 
+                        title="Vị trí cửa hàng LIM"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.684534839841!2d106.67784381533427!3d10.758778662459952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1b88e1bfad%3A0xc39e99214777e486!2zNzY2IFbDtSBWxINuIEtp4buHdCwgUGjGsOG7nW5nIDEsIFF14bqtbiA1LCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmgsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =========================================================================
+         3. LIGHTBOX MODALS THUẦN CSS (HỌC TỪ LAB 8.1 - SỬ DỤNG :TARGET)
+         ========================================================================= -->
+    <!-- Modal 1: Polo -->
+    <div id="lightbox-polo1" class="lightbox_modal">
+        <a href="#banchay" class="lightbox_backdrop"></a>
+        <div class="lightbox_dialog">
+            <a href="#banchay" class="lightbox_close">&times;</a>
+            <div class="lightbox_img_box">
+                <img src="images/polo1.png" alt="Áo Polo LIM-P01">
+            </div>
+            <div class="lightbox_details">
+                <h3>Áo polo cá sấu lười ủi LIM-P01</h3>
+                <p>Chất vải cá sấu cotton 100% tự nhiên không nhăn xù, thấm hút mồ hôi tối đa, đường may gia cố tỉ mỉ chuẩn xuất khẩu. Giá: 235.450đ (Giá gốc: 277.000đ).</p>
+                <a href="product_detail.html" class="btn_buy">Xem chi tiết &amp; Chọn size</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Sơ mi -->
+    <div id="lightbox-somi1" class="lightbox_modal">
+        <a href="#banchay" class="lightbox_backdrop"></a>
+        <div class="lightbox_dialog">
+            <a href="#banchay" class="lightbox_close">&times;</a>
+            <div class="lightbox_img_box">
+                <img src="images/somi1.png" alt="Áo Sơ Mi LIM-S01">
+            </div>
+            <div class="lightbox_details">
+                <h3>Áo sơ mi vải không nhăn LIM-S01</h3>
+                <p>Dệt rổ sợi sọc thời trang cao cấp, giữ nếp cổ áo sắc nét suốt cả ngày làm việc mà không cần là ủi phức tạp. Giá: 303.450đ (Giá gốc: 357.000đ).</p>
+                <a href="product_detail.html" class="btn_buy">Xem chi tiết &amp; Chọn size</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Khoác -->
+    <div id="lightbox-khoac1" class="lightbox_modal">
+        <a href="#banchay" class="lightbox_backdrop"></a>
+        <div class="lightbox_dialog">
+            <a href="#banchay" class="lightbox_close">&times;</a>
+            <div class="lightbox_img_box">
+                <img src="images/khoac1.png" alt="Áo Khoác LIM-K01">
+            </div>
+            <div class="lightbox_details">
+                <h3>Áo khoác dệt phối màu LIM-K01</h3>
+                <p>Áo khoác gió thể thao 2 lớp cản gió, trượt nước đi mưa nhẹ, khóa kéo kim loại YKK bền bỉ bảo hành trọn đời. Giá: 350.000đ (Giá gốc: 420.000đ).</p>
+                <a href="product_detail.html" class="btn_buy">Xem chi tiết &amp; Chọn size</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Quần -->
+    <div id="lightbox-quan1" class="lightbox_modal">
+        <a href="#banchay" class="lightbox_backdrop"></a>
+        <div class="lightbox_dialog">
+            <a href="#banchay" class="lightbox_close">&times;</a>
+            <div class="lightbox_img_box">
+                <img src="images/quan1.png" alt="Quần LIM-Q01">
+            </div>
+            <div class="lightbox_details">
+                <h3>Quần thun dáng ống rộng F5 LIM-Q01</h3>
+                <p>Form dáng Streetwear ống siêu rộng thời thượng, lưng thun co giãn có dây rút tiện lợi, tạo cảm giác thoải mái tối đa khi vận động. Giá: 464.950đ.</p>
+                <a href="product_detail.html" class="btn_buy">Xem chi tiết &amp; Chọn size</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         4. FOOTER THƯƠNG HIỆU LIM.VN
+         ========================================================================= -->
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="footer_col">
+                <h4>Về LIM.vn</h4>
+                <p style="font-size: 13px; line-height: 1.6; margin-bottom: 12px; color: #aaaaaa;">
+                    LIM.vn - Chuỗi cửa hàng thời trang nam uy tín hàng đầu tại Việt Nam. Thiết kế &amp; sản xuất trực tiếp tại Việt Nam.
+                </p>
+                <ul>
+                    <li><a href="about.html">Giới thiệu thương hiệu</a></li>
+                    <li><a href="contact.html">Hệ thống 45+ chi nhánh</a></li>
+                    <li><a href="about.html">Tuyển dụng nhân sự</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Chính sách mua hàng</h4>
+                <ul>
+                    <li><a href="#">Chính sách đổi trả 365 ngày</a></li>
+                    <li><a href="#">Chính sách bảo hành trọn đời</a></li>
+                    <li><a href="#">Chính sách giao hàng hỏa tốc</a></li>
+                    <li><a href="#">Bảo mật thông tin khách hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Tổng đài hỗ trợ</h4>
+                <ul>
+                    <li>Mua hàng online: <b>1900 3508</b></li>
+                    <li>Chăm sóc khách hàng: <b>028 7307 1441</b></li>
+                    <li>Email hỗ trợ: support@lim.vn</li>
+                    <li>Thời gian: 8:00 - 21:30 hàng ngày</li>
+                </ul>
+            </div>
+
+            <div class="footer_col">
+                <h4>Kết nối với LIM.vn</h4>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook: fb.com/limshop</a></li>
+                    <li><a href="#"><i class="fa-brands fa-tiktok"></i> TikTok: @lim_vn</a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram: @lim.streetwear</a></li>
+                    <li><a href="#"><i class="fa-solid fa-phone"></i> Hotline Zalo: 0353 807 079</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer_bottom">
+            &copy; 2026 LIM.vn - Đồ án môn học WEB101 Thiết kế &amp; Xây dựng trang web - FPT Polytechnic.
+        </div>
+    </footer>
+
+    <!-- Script lọc tìm kiếm sản phẩm nhanh trực tiếp trên giao diện -->
+    <script>
+        function filterProducts() {
+            let input = document.getElementById('search_input').value.toLowerCase().trim();
+            let cards = document.querySelectorAll('.product_card');
+            cards.forEach(card => {
+                let name = card.querySelector('.prod_name').innerText.toLowerCase();
+                if (name.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

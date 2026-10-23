@@ -1,0 +1,1329 @@
+/* =========================================================================
+   1. SLIDESHOW BANNER TỰ ĐỘNG CHUYỂN SLIDE (HỌC TỪ LAB 7.2 & DEMO-SLIDESHOW)
+   ========================================================================= */
+
+.slideshow_wrapper {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 35px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.slideshow_inner {
+    display: flex;
+    width: 400%; /* 4 Slides */
+    animation: limSlide 14s infinite ease-in-out;
+}
+
+/* Tạm dừng animation khi hover chuột vào banner */
+.slideshow_inner:hover {
+    animation-play-state: paused;
+}
+
+.slide_item {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 45px;
+    background-color: #f0f0f0;
+}
+
+.slide_item_dark {
+    background: linear-gradient(135deg, #111111 0%, #2b2b2b 100%);
+    color: #ffffff;
+}
+
+.slide_item_orange {
+    background: linear-gradient(135deg, #e63e00 0%, #ff6b3d 100%);
+    color: #ffffff;
+}
+
+.slide_item_blue {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+}
+
+.poster_content {
+    flex: 1.2;
+    padding-right: 25px;
+}
+
+.poster_tag {
+    display: inline-block;
+    background-color: var(--yameOrange);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.slide_item_orange .poster_tag {
+    background-color: #111111;
+}
+
+.poster_title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.slide_item_dark .poster_title,
+.slide_item_orange .poster_title,
+.slide_item_blue .poster_title {
+    color: #ffffff;
+}
+
+.poster_price {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--yameOrange);
+    margin-bottom: 12px;
+}
+
+.slide_item_orange .poster_price {
+    color: #ffe600;
+}
+
+.slide_item_blue .poster_price {
+    color: #ffcc00;
+}
+
+.poster_desc {
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
+
+.slide_item_dark .poster_desc,
+.slide_item_orange .poster_desc,
+.slide_item_blue .poster_desc {
+    color: #f0f0f0;
+}
+
+.poster_btn {
+    display: inline-block;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: none;
+    letter-spacing: 0.3px;
+    transition: var(--mainTransition);
+}
+
+.slide_item_dark .poster_btn {
+    background-color: var(--yameOrange);
+}
+
+.slide_item_orange .poster_btn {
+    background-color: #ffffff;
+    color: #e63e00;
+}
+
+.slide_item_blue .poster_btn {
+    background-color: #ffffff;
+    color: #1e3c72;
+}
+
+.poster_btn:hover {
+    background-color: var(--yameOrange);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+}
+
+.poster_showcase {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster_showcase img {
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.poster_showcase img:hover {
+    transform: scale(1.06);
+}
+
+/* @keyframes slide chuẩn 4 slide theo bài demo */
+@keyframes limSlide {
+    0%, 20% {
+        transform: translateX(0);
+    }
+    25%, 45% {
+        transform: translateX(-25%);
+    }
+    50%, 70% {
+        transform: translateX(-50%);
+    }
+    75%, 95% {
+        transform: translateX(-75%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* =========================================================================
+   2. FEATURES SECTION (4 ĐIỂM MẠNH - THEO TRANG 2 ĐỀ ASSIGNMENT.PDF)
+   ========================================================================= */
+
+.features_section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.feature_box {
+    background-color: #ffffff;
+    border: 1px solid var(--yameBorder);
+    border-radius: 10px;
+    padding: 22px 18px;
+    text-align: center;
+    transition: var(--mainTransition);
+}
+
+.feature_box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--yameOrange);
+}
+
+.feature_icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.feature_box h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+}
+
+.feature_box p {
+    font-size: 12px;
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* =========================================================================
+   3. TIÊU ĐỀ PHÂN ĐOẠN (SECTION TITLE)
+   ========================================================================= */
+
+.section_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--yameOrange);
+    padding-left: 12px;
+    margin: 35px 0 20px 0;
+}
+
+.section_title span {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    letter-spacing: 0.2px;
+}
+
+.section_title a {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--yameOrange);
+    text-decoration: none;
+    transition: var(--mainTransition);
+}
+
+.section_title a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================================
+   4. GRID SẢN PHẨM & CARD SẢN PHẨM PHONG CÁCH YAME.VN
+   ========================================================================= */
+
+.product_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.product_card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--mainTransition);
+}
+
+.product_card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    border-color: var(--yameOrange);
+}
+
+.badge_discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--yameOrange);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.product_img_wrap {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+    background-color: #fbfbfb;
+    border-radius: 6px;
+}
+
+.product_img_wrap img {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product_card:hover .product_img_wrap img {
+    transform: scale(1.08);
+}
+
+/* Nút Quickview / Phóng to ảnh Lightbox */
+.zoom_btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    text-decoration: none;
+    opacity: 0;
+    transition: var(--mainTransition);
+}
+
+.product_card:hover .zoom_btn {
+    opacity: 1;
+}
+
+.zoom_btn:hover {
+    background-color: var(--yameOrange);
+    transform: scale(1.1);
+}
+
+.prod_name {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    height: 38px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.prod_name a {
+    text-decoration: none;
+    color: #222222;
+    transition: color 0.2s;
+}
+
+.prod_name a:hover {
+    color: var(--yameOrange);
+}
+
+.price_box {
+    margin-top: auto;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.curr_price {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--yameOrange);
+}
+
+.old_price {
+    font-size: 12px;
+    color: #888888;
+    text-decoration: line-through;
+}
+
+.btn_buy {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--yameBlack);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 8px 0;
+    border-radius: 4px;
+    text-transform: none;
+    transition: var(--mainTransition);
+}
+
+.btn_buy:hover {
+    background-color: var(--yameOrange);
+    color: #ffffff;
+}
+
+/* =========================================================================
+   5. LIGHTBOX MODAL THUẦN CSS (HỌC TỪ LAB 8.1 & ĐẠT Y4 ASSIGNMENT)
+   ========================================================================= */
+
+.lightbox_modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lightbox_modal:target {
+    display: flex;
+}
+
+.lightbox_backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+.lightbox_dialog {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 650px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+    animation: zoomModal 0.3s ease-out;
+}
+
+@keyframes zoomModal {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.lightbox_close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1;
+    z-index: 2002;
+    transition: color 0.2s;
+}
+
+.lightbox_close:hover {
+    color: var(--yameOrange);
+}
+
+.lightbox_img_box {
+    background-color: #f7f7f7;
+    padding: 30px;
+    text-align: center;
+}
+
+.lightbox_img_box img {
+    max-height: 320px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.lightbox_details {
+    padding: 20px 25px 25px 25px;
+}
+
+.lightbox_details h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--yameBlack);
+}
+
+.lightbox_details p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* =========================================================================
+   6. ABOUT STORY & VIDEO YOUTUBE RESPONSIVE (HỌC TỪ LAB 8.1)
+   ========================================================================= */
+
+.about_showcase_section {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 35px 30px;
+    margin-bottom: 40px;
+    border: 1px solid var(--yameBorder);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.about_text_col h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    margin-bottom: 14px;
+}
+
+.about_text_col p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555555;
+    margin-bottom: 14px;
+}
+
+.about_video_col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Container Video 16:9 Responsive */
+.video_responsive_container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.video_responsive_container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================================================================
+   7. BẢNG THÔNG SỐ CHỌN SIZE (TABLE - BẮT BUỘC THEO Y1 ASSIGNMENT.PDF)
+   ========================================================================= */
+
+.table_responsive_wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid var(--yameBorder);
+    padding: 15px;
+    margin-bottom: 40px;
+}
+
+.size_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: center;
+}
+
+.size_table th {
+    background-color: var(--yameBlack);
+    color: #ffffff;
+    font-weight: 800;
+    padding: 12px 10px;
+    text-transform: none;
+    letter-spacing: 0.3px;
+}
+
+.size_table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eeeeee;
+    color: #444444;
+}
+
+.size_table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.size_table tbody tr:hover {
+    background-color: #fff2ed;
+    color: var(--yameOrange);
+    font-weight: 700;
+}
+
+/* =========================================================================
+   8. DỊCH VỤ KHÁCH HÀNG (SERVICES - THEO TRANG 2 ĐỀ ASSIGNMENT.PDF)
+   ========================================================================= */
+
+.services_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.service_card {
+    background-color: #ffffff;
+    border: 1px solid var(--yameBorder);
+    border-radius: 10px;
+    padding: 28px 22px;
+    text-align: center;
+    transition: var(--mainTransition);
+}
+
+.service_card:hover {
+    border-color: var(--yameOrange);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.service_icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.service_card h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    margin-bottom: 10px;
+}
+
+.service_card p {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* =========================================================================
+   9. TÍCH HỢP MẠNG XÃ HỘI (FACEBOOK WIDGETS - HỌC TỪ LAB 7.2)
+   ========================================================================= */
+
+.social_widget_section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid var(--yameBorder);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.social_widget_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.social_card {
+    background-color: #fafafa;
+    border: 1px solid #e9ebee;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.social_card h4 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social_card p {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.mock_fb_bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mock_fb_btn {
+    border: none;
+    background-color: #1877f2;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+}
+
+.mock_fb_btn:hover {
+    background-color: #1464cc;
+}
+
+.mock_share_btn {
+    background-color: #e4e6eb;
+    color: #050505;
+}
+
+.mock_share_btn:hover {
+    background-color: #d8dadf;
+}
+
+.comment_box_mock {
+    background: #ffffff;
+    border: 1px solid #e4e6eb;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.comment_user {
+    font-size: 13px;
+    font-weight: 700;
+    color: #050505;
+    margin-bottom: 4px;
+}
+
+.comment_text {
+    font-size: 12px;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* =========================================================================
+   10. CONTACT & GOOGLE MAPS (HỌC TỪ LAB 8.1 & ĐỀ ASSIGNMENT.PDF)
+   ========================================================================= */
+
+.contact_map_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact_form_box {
+    background-color: #ffffff;
+    border: 1px solid var(--yameBorder);
+    border-radius: 10px;
+    padding: 25px 30px;
+}
+
+.contact_form_box h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    margin-bottom: 15px;
+}
+
+.form_group {
+    margin-bottom: 14px;
+}
+
+.form_group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #444444;
+    margin-bottom: 5px;
+}
+
+.form_control {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form_control:focus {
+    border-color: var(--yameOrange);
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.25);
+}
+
+.map_embed_box {
+    border: 3px solid var(--yameOrange);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 380px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map_embed_box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Các lớp Form và Nút bổ trợ cho các trang con (About, Contact, Product Detail) */
+.forms_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.form_box {
+    background-color: #ffffff;
+    border: 1px solid var(--yameBorder);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.form_box .form_header {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--yameBlack);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--yameOrange);
+}
+
+.btn_submit {
+    display: inline-block;
+    background-color: var(--yameOrange);
+    color: #ffffff;
+    border: 1px solid var(--yameOrange);
+    padding: 11px 22px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0.3px;
+    font-family: inherit;
+    transition: var(--mainTransition);
+}
+
+.btn_submit:hover {
+    background-color: var(--yameOrangeHover);
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.3);
+}
+
+.btn_reset {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #555555;
+    border: 1px solid #d5d5d5;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--mainTransition);
+    margin-left: 8px;
+}
+
+.btn_reset:hover {
+    background-color: #e2e2e2;
+    color: #222222;
+}
+
+.chk_label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Breadcrumb điều hướng */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #444444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--yameOrange);
+}
+
+.breadcrumb span {
+    color: #bbbbbb;
+}
+
+/* Thông báo phản hồi nhẹ nhàng không gây khó chịu cho người dùng */
+.form_feedback_msg {
+    display: none;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Chi tiết sản phẩm bổ trợ */
+.detail_actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.size_pill_group, .color_pill_group {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0 18px 0;
+    flex-wrap: wrap;
+}
+
+.size_pill_btn {
+    padding: 8px 16px;
+    border: 1px solid #d0d0d0;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--mainTransition);
+}
+
+.size_pill_btn:hover,
+.size_pill_btn.active {
+    border-color: var(--yameOrange);
+    color: var(--yameOrange);
+    background-color: #fff6f2;
+}
+
+.color_dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px #cccccc;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color_dot:hover, .color_dot.active {
+    box-shadow: 0 0 0 2px var(--yameOrange);
+    transform: scale(1.1);
+}
+
+.qty_selector {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.qty_btn {
+    background: #f5f5f5;
+    border: none;
+    width: 34px;
+    height: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #444444;
+}
+
+.qty_btn:hover {
+    background: #e8e8e8;
+}
+
+.qty_input {
+    width: 45px;
+    height: 36px;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 13px;
+    outline: none;
+}
+
+/* =========================================================================
+   11. AUTH PAGES STYLING (LOGIN / REGISTER)
+   ========================================================================= */
+
+.auth_body {
+    background-color: #f8f8f8;
+    padding-top: 0;
+}
+
+.auth_header {
+    text-align: center;
+    padding: 30px 0 10px 0;
+}
+
+.auth_container {
+    max-width: 440px;
+    margin: 20px auto 50px auto;
+    padding: 0 20px;
+}
+
+.auth_box {
+    background-color: #ffffff;
+    border: 1px solid var(--yameBorder);
+    border-radius: 10px;
+    padding: 35px 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.auth_box h2 {
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--yameBlack);
+    margin-bottom: 6px;
+}
+
+.auth_subtitle {
+    font-size: 13px;
+    color: #777777;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.social_login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.btn_social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    background: #ffffff;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: inherit;
+    transition: var(--mainTransition);
+}
+
+.btn_social:hover {
+    background: #f5f5f5;
+    border-color: #999999;
+}
+
+.divider_or {
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.divider_or::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.divider_or span {
+    position: relative;
+    background-color: #ffffff;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #888888;
+}
+
+.input_field {
+    margin-bottom: 14px;
+}
+
+.input_field input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: var(--mainTransition);
+}
+
+.input_field input:focus {
+    border-color: var(--yameOrange);
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.25);
+}
+
+.btn_auth_submit {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--yameBlack);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0.3px;
+    transition: var(--mainTransition);
+    margin-top: 8px;
+}
+
+.btn_auth_submit:hover {
+    background-color: var(--yameOrange);
+}
+
+.checkbox_group {
+    margin: 15px 0;
+    font-size: 12px;
+    color: #555555;
+}
+
+.auth_terms {
+    font-size: 11px;
+    color: #888888;
+    text-align: center;
+    line-height: 1.5;
+    margin: 12px 0 0 0;
+}
+
+.auth_terms a {
+    color: var(--yameOrange);
+    text-decoration: none;
+}
+
+.auth_switch {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    font-size: 12px;
+    color: #666666;
+}
+
+.auth_switch a {
+    color: var(--yameOrange);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* =========================================================================
+   12. TRANG CHI TIẾT SẢN PHẨM (PRODUCT DETAIL)
+   ========================================================================= */
+
+.detail_container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 35px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid var(--yameBorder);
+    margin-bottom: 40px;
+}
+
+.detail_img {
+    background-color: #fafafa;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eeeeee;
+}
+
+.detail_img img {
+    max-height: 380px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.detail_info h1 {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--yameBlack);
+    margin-bottom: 12px;
+}
+
+.detail_price {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--yameOrange);
+    margin-bottom: 15px;
+}
+
+.detail_price .old_price {
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+/* =========================================================================
+   13. RESPONSIVE MEDIA QUERIES (CHUẨN TOÀN DIỆN CHO MỌI THIẾT BỊ)
+   ========================================================================= */
+
+@media screen and (max-width: 992px) {
+    .product_grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .features_section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about_showcase_section {
+        grid-template-columns: 1fr;
+    }
+
+    .contact_map_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slide_item {
+        flex-direction: column;
+        padding: 25px 20px;
+        text-align: center;
+    }
+
+    .poster_content {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .poster_title {
+        font-size: 22px;
+    }
+
+    .poster_showcase img {
+        height: 140px;
+    }
+
+    .product_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .features_section {
+        grid-template-columns: 1fr;
+    }
+
+    .services_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social_widget_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .forms_wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .detail_container {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .product_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .poster_title {
+        font-size: 18px;
+    }
+}
